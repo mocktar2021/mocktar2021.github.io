@@ -3,409 +3,250 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mocktar Tairou | DevOps and Cloud Platform Engineer</title>
-  <meta name="description" content="DevOps and Cloud Platform Engineer. AWS, Azure, Terraform Cloud, Kubernetes, CI/CD, Observability, Security." />
+  <title>Mocktar Tairou | DevOps & Cloud Platform Engineer</title>
+
   <style>
     :root {
-      --text: #111;
-      --muted: #444;
-      --border: #ddd;
-      --bg: #fff;
-      --link: #0b57d0;
+      --bg: #faf8f6;
+      --card-bg: #ffffff;
+      --text: #2b2118;
+      --muted: #6b5a4a;
+      --border: #d8cfc4;
+      --primary: #6b3f2a;
+      --accent: #a06a4a;
+      --link: #6b3f2a;
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.45;
+      line-height: 1.5;
     }
+
     .wrap {
       max-width: 980px;
-      margin: 0 auto;
-      padding: 28px 18px;
+      margin: auto;
+      padding: 32px 20px;
     }
+
     header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 18px;
-      margin-bottom: 18px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
     }
+
     h1 {
-      margin: 0 0 6px 0;
-      font-size: 28px;
-      letter-spacing: 0.2px;
+      margin: 0;
+      font-size: 30px;
+      color: var(--primary);
     }
+
     .subtitle {
-      margin: 0 0 10px 0;
+      margin: 8px 0 12px;
       color: var(--muted);
       font-size: 15px;
     }
+
     .meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 16px;
+      gap: 10px 18px;
       font-size: 14px;
       color: var(--muted);
     }
-    .meta a { color: var(--link); text-decoration: none; }
-    .meta a:hover { text-decoration: underline; }
 
-    nav {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 14px;
-      font-size: 14px;
-    }
-    nav a {
+    .meta a {
       color: var(--link);
       text-decoration: none;
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
     }
-    nav a:hover { text-decoration: underline; }
+
+    nav {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      background: var(--card-bg);
+    }
+
+    nav a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
 
     section {
-      padding: 16px 0;
+      padding: 22px 0;
       border-bottom: 1px solid var(--border);
     }
-    h2 {
-      margin: 0 0 10px 0;
-      font-size: 18px;
-      letter-spacing: 0.2px;
-    }
-    p { margin: 0 0 10px 0; }
-    ul { margin: 8px 0 0 18px; padding: 0; }
-    li { margin: 6px 0; }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
+    h2 {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 20px;
     }
-    @media (min-width: 860px) {
-      .grid { grid-template-columns: 1fr 1fr; }
+
+    p { margin-bottom: 10px; }
+
+    ul {
+      margin-left: 18px;
+      padding-left: 0;
     }
+
+    li { margin-bottom: 6px; }
+
     .card {
+      background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 14px;
-      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
     }
+
     .card h3 {
-      margin: 0 0 6px 0;
-      font-size: 16px;
+      margin-top: 0;
+      color: var(--primary);
     }
-    .card .small {
-      color: var(--muted);
+
+    .small {
       font-size: 13px;
-      margin: 0 0 10px 0;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 10px;
     }
+
     .tag {
       font-size: 12px;
-      color: var(--muted);
       border: 1px solid var(--border);
-      border-radius: 999px;
       padding: 4px 8px;
-      white-space: nowrap;
+      border-radius: 999px;
+      color: var(--muted);
+      background: #f3ede8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
     }
 
     footer {
-      padding: 18px 0 6px 0;
-      color: var(--muted);
+      padding: 20px 0;
       font-size: 13px;
-    }
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    @media (min-width: 860px) {
-      .two-col { grid-template-columns: 1fr 1fr; }
-    }
-    .kpi {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .kpi .box {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px 12px;
-    }
-    .kpi .num {
-      font-size: 18px;
-      font-weight: 700;
-      margin: 0;
-    }
-    .kpi .label {
-      margin: 2px 0 0 0;
       color: var(--muted);
-      font-size: 13px;
-    }
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .btn {
-      display: inline-block;
-      color: #fff;
-      background: #111;
-      text-decoration: none;
-      padding: 10px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    .btn:hover { opacity: 0.92; }
-    .btn.secondary {
-      background: #fff;
-      color: #111;
-      border: 1px solid var(--border);
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+
     <header>
       <h1>Mocktar Adjibade Tairou, MBA</h1>
-      <p class="subtitle">DevOps and Cloud Platform Engineer, AWS and Azure, Terraform Cloud, Kubernetes, CI/CD, Observability, Security</p>
+      <p class="subtitle">
+        DevOps & Cloud Platform Engineer · AWS · Azure · Terraform · Kubernetes · CI/CD · Security
+      </p>
 
       <div class="meta">
         <span>Greensboro, NC</span>
         <span><a href="mailto:tairou.mocktar@gmail.com">tairou.mocktar@gmail.com</a></span>
-        <span><a href="tel:+13363980610">336-398-0610</a></span>
-        <span><a href="https://linkedin.com/in/mocktar-tairou" target="_blank" rel="noopener">linkedin.com/in/mocktar-tairou</a></span>
-        <span><a href="https://github.com/your-github" target="_blank" rel="noopener">github.com/your-github</a></span>
+        <span>336-398-0610</span>
+        <span><a href="https://linkedin.com/in/mocktar-tairou" target="_blank">LinkedIn</a></span>
+        <span><a href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a></span>
       </div>
 
-      <nav aria-label="Sections">
+      <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#certs">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <div class="btn-row">
-        <a class="btn" href="Mocktar_Tairou_Resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
-        <a class="btn secondary" href="#contact">Contact</a>
-      </div>
     </header>
 
     <section id="about">
       <h2>About</h2>
       <p>
-        I build secure, scalable cloud platforms that help teams ship faster with fewer production issues.
-        I focus on Infrastructure as Code, CI/CD automation, Kubernetes operations, and observability.
-        I work across AWS and Azure, with a strong emphasis on governance, compliance, and developer enablement.
+        DevOps and Cloud Platform Engineer with over 10 years of experience building secure,
+        scalable infrastructure across AWS and Azure. Strong focus on Terraform Cloud,
+        Kubernetes operations, CI/CD automation, observability, and compliance-driven platforms.
       </p>
-
-      <div class="kpi" aria-label="Highlights">
-        <div class="box">
-          <p class="num">10+ years</p>
-          <p class="label">DevOps, cloud, and automation</p>
-        </div>
-        <div class="box">
-          <p class="num">15+ modules</p>
-          <p class="label">Terraform Cloud private registry modules</p>
-        </div>
-        <div class="box">
-          <p class="num">AWS + Azure</p>
-          <p class="label">Multi-cloud delivery and governance</p>
-        </div>
-        <div class="box">
-          <p class="num">English + French</p>
-          <p class="label">Bilingual communication</p>
-        </div>
-      </div>
     </section>
 
     <section id="skills">
-      <h2>Skills</h2>
-      <div class="two-col">
-        <div class="card">
-          <h3>Infrastructure as Code and Cloud</h3>
-          <ul>
-            <li>Terraform, Terraform Cloud, Terragrunt, AzAPI, AzureRM, AWS providers</li>
-            <li>AWS: VPC, EC2, S3, RDS, IAM, CloudWatch</li>
-            <li>Azure: VNET, AKS, Event Hubs, Service Bus, Logic Apps, Container Apps, Data Factory, Databricks, Cosmos DB</li>
-            <li>Private endpoints, DNS integration, encryption, tagging standards</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Terraform Cloud</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Azure</span>
-            <span class="tag">Networking</span>
-            <span class="tag">Governance</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>DevOps, Security, and Operations</h3>
-          <ul>
-            <li>CI/CD: GitHub Actions, Jenkins, ArgoCD, GitLab CI</li>
-            <li>Containers: Docker, Kubernetes, Helm</li>
-            <li>Security: tfsec, Checkov, Sentinel policies, secrets automation (Delinea)</li>
-            <li>Observability: Log Analytics, CloudWatch, Datadog, New Relic, Grafana</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Kubernetes</span>
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">ArgoCD</span>
-            <span class="tag">Checkov</span>
-            <span class="tag">Observability</span>
-          </div>
-        </div>
+      <h2>Core Skills</h2>
+      <div class="card">
+        <ul>
+          <li>Infrastructure as Code: Terraform, Terraform Cloud, Terragrunt</li>
+          <li>AWS: VPC, EC2, S3, RDS, IAM, CloudWatch</li>
+          <li>Azure: VNET, AKS, Event Hubs, Logic Apps, Container Apps</li>
+          <li>Containers: Docker, Kubernetes, Helm</li>
+          <li>CI/CD: GitHub Actions, Jenkins, ArgoCD</li>
+          <li>Security & Compliance: Checkov, tfsec, Sentinel, private endpoints</li>
+        </ul>
       </div>
     </section>
 
     <section id="projects">
       <h2>Selected Projects</h2>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Terraform Cloud Module Library, AWS and Azure</h3>
-          <p class="small">Annalect, Omnicom Media Group, 2022 to present</p>
-          <ul>
-            <li>Designed and published reusable modules for landing zones and core services.</li>
-            <li>Covered VNET and VPC networking, private endpoints, diagnostics, tagging, and policy guardrails.</li>
-            <li>Supported databases (MSSQL, PostgreSQL, MySQL flexible servers), Event Hubs, Service Bus, Logic Apps, Container Apps, S3, EC2.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Terraform</span>
-            <span class="tag">Terraform Cloud</span>
-            <span class="tag">AWS</span>
-            <span class="tag">Azure</span>
-            <span class="tag">Security</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Backstage IDP Self-Service Provisioning</h3>
-          <p class="small">Annalect, Omnicom Media Group, 2022 to present</p>
-          <ul>
-            <li>Built Backstage scaffolder templates for no-code provisioning.</li>
-            <li>Added schema validation, automated scans, approvals, and consistent outputs across teams.</li>
-            <li>Resolved template rendering issues and dynamic variable injection problems.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Backstage</span>
-            <span class="tag">IDP</span>
-            <span class="tag">DevEx</span>
-            <span class="tag">Automation</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>PromptFlow Orchestrator Platform, DevOps Ownership</h3>
-          <p class="small">Omnicom Health, DevOps Engineer</p>
-          <ul>
-            <li>Owned CI/CD pipelines, infrastructure automation, and operational readiness.</li>
-            <li>Automated environment provisioning with Terraform and enforced security controls.</li>
-            <li>Integrated monitoring and diagnostics, improved deployment consistency.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">CI/CD</span>
-            <span class="tag">Terraform</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Observability</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Chaos Engineering for Resilience Testing</h3>
-          <p class="small">Infostretch, 2022</p>
-          <ul>
-            <li>Executed Gremlin experiments on Kubernetes, EC2, and VM infrastructure.</li>
-            <li>Validated failure scenarios, improved runbooks, and reduced recovery time.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Gremlin</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Reliability</span>
-          </div>
-        </div>
-      </div>
-
-      <p class="small" style="margin-top:12px; color:#444;">
-        Replace placeholders with your links: GitHub repos, diagrams, pipeline examples, or write-ups.
-      </p>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="card" style="margin-bottom:12px;">
-        <h3>Annalect (Omnicom Media Group), Remote</h3>
-        <p class="small">DevOps Engineer and Cloud Platform Engineer, Jul 2022 to Present</p>
+      <div class="card">
+        <h3>Enterprise Terraform Cloud Module Platform</h3>
+        <p class="small">Annalect · Omnicom Media Group</p>
         <ul>
-          <li>Built reusable Terraform Cloud modules used across teams for AWS and Azure infrastructure.</li>
-          <li>Developed CI/CD workflows with security scanning and policy checks.</li>
-          <li>Improved observability by integrating diagnostics and monitoring standards into modules.</li>
-          <li>Supported production troubleshooting across multiple Terraform Cloud workspaces.</li>
-        </ul>
-      </div>
-
-      <div class="card" style="margin-bottom:12px;">
-        <h3>Infostretch, Remote</h3>
-        <p class="small">DevOps Engineer, Mar 2022 to Jul 2022</p>
-        <ul>
-          <li>Ran chaos engineering experiments with Gremlin on Kubernetes and cloud infrastructure.</li>
-          <li>Automated provisioning and configuration management with Terraform and Ansible.</li>
-        </ul>
-      </div>
-
-      <div class="card" style="margin-bottom:12px;">
-        <h3>Cognizant, Remote</h3>
-        <p class="small">DevOps Engineer, Jan 2017 to Mar 2022</p>
-        <ul>
-          <li>Automated AWS infrastructure including VPC, EC2, S3, Route53, and load balancing using Terraform.</li>
-          <li>Built CI/CD pipelines with Jenkins and supported Kubernetes operations.</li>
-          <li>Implemented monitoring with CloudWatch, Grafana, and New Relic.</li>
+          <li>Designed and published 15+ reusable Terraform modules for AWS and Azure landing zones.</li>
+          <li>Embedded security, diagnostics, and compliance standards by default.</li>
+          <li>Reduced infrastructure provisioning time from days to minutes.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>OCEANIX SARL, Benin</h3>
-        <p class="small">Linux System Administrator, Aug 2013 to Jan 2017</p>
+        <h3>Backstage IDP Self-Service Infrastructure</h3>
         <ul>
-          <li>Administered Linux servers and automated operations with Bash and cron.</li>
-          <li>Supported web stacks and reverse proxy configurations.</li>
+          <li>Built no-code provisioning templates with validation and security controls.</li>
+          <li>Enabled self-service for engineering teams with governance guardrails.</li>
         </ul>
       </div>
-    </section>
-
-    <section id="certs">
-      <h2>Certifications</h2>
-      <ul>
-        <li>HashiCorp Certified: Terraform Associate (002)</li>
-      </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:tairou.mocktar@gmail.com">tairou.mocktar@gmail.com</a></p>
-      <p>Phone: <a href="tel:+13363980610">336-398-0610</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/mocktar-tairou" target="_blank" rel="noopener">linkedin.com/in/mocktar-tairou</a></p>
-      <p>GitHub: <a href="https://github.com/your-github" target="_blank" rel="noopener">github.com/your-github</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/mocktar-tairou" target="_blank">linkedin.com/in/mocktar-tairou</a></p>
     </section>
 
     <footer>
-      <div>© <span id="year"></span> Mocktar Tairou</div>
+      © <span id="year"></span> Mocktar Tairou
     </footer>
+
   </div>
 
   <script>
