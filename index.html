@@ -1,76 +1,354 @@
-<section id="experience">
-  <h2>Experience</h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mocktar Tairou | DevOps & Cloud Platform Engineer</title>
+  <meta name="description" content="DevOps & Cloud Platform Engineer. AWS, Azure, Terraform Cloud, Kubernetes, CI/CD, Observability, Security." />
 
-  <div class="card">
-    <h3>DevOps Engineer / Cloud Platform Engineer</h3>
-    <p class="small">Annalect (Omnicom Media Group) · Remote · Jul 2022 – Present</p>
+  <style>
+    :root {
+      --bg: #faf8f6;
+      --card-bg: #ffffff;
+      --text: #2b2118;
+      --muted: #6b5a4a;
+      --border: #d8cfc4;
+      --primary: #6b3f2a;
+      --accent: #a06a4a;
+      --link: #6b3f2a;
+    }
 
-    <p class="small">Terraform Cloud Module Development and Governance</p>
-    <ul>
-      <li>Designed and published 15+ reusable Terraform Cloud modules supporting Azure and AWS landing zones, including multi-engine databases (MSSQL, PostgreSQL, MySQL Flexible Servers) with AAD authentication, private endpoints, DNS integration, customer-managed keys, and high availability.</li>
-      <li>Built modules for Azure Event Hubs, Service Bus, Logic Apps, Container Apps, VNET, Data Factory, Databricks Workspace, and Cosmos DB.</li>
-      <li>Built AWS modules for S3 (static website and Nasuni) and EC2 with secondary IPs and CPU options.</li>
-      <li>Enforced OMC security and compliance standards including private endpoints, diagnostics, Sentinel policies, tagging governance, and drift detection.</li>
-      <li>Authored detailed documentation, versioning strategy, and module onboarding guides used across global engineering teams.</li>
-    </ul>
+    * { box-sizing: border-box; }
 
-    <p class="small">Backstage IDP and Self-Service Platform Engineering</p>
-    <ul>
-      <li>Developed and maintained Backstage scaffolding templates enabling no-code provisioning with built-in security scanning, approvals, and peer-review workflows.</li>
-      <li>Resolved complex rendering, validation, and dynamic variable injection issues across S3, Event Hubs, Logic Apps, and VNET templates.</li>
-    </ul>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
 
-    <p class="small">CI/CD Automation and Pipeline Engineering</p>
-    <ul>
-      <li>Engineered GitHub Actions workflows with Checkov, tfsec, Infracost, pre-commit hooks, workspace automation, and Delinea secret rotation.</li>
-      <li>Reduced provisioning time from days to minutes through automation and dynamic configuration injection.</li>
-    </ul>
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px;
+    }
 
-    <p class="small">AI Platform Enablement, PromptFlow Orchestrator (Omnicom Health)</p>
-    <ul>
-      <li>Served as the DevOps Engineer supporting the PromptFlow Orchestrator AI automation platform for Omnicom Health.</li>
-      <li>Built CI/CD pipelines enabling secure deployment of orchestrator components including automated testing, artifact builds, and environment promotion workflows.</li>
-      <li>Automated cloud infrastructure using Terraform and Azure services to support API backends, workflow engines, and supporting data services.</li>
-      <li>Integrated monitoring through Log Analytics, diagnostics, and alerting to improve platform reliability and reduce operational issues.</li>
-      <li>Implemented RBAC, network security controls, and Delinea secret management to meet enterprise compliance requirements.</li>
-      <li>Collaborated with developers and architects to ensure production readiness, scalability, and operational best practices.</li>
-    </ul>
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+    }
 
-    <p class="small">Observability and Operational Excellence</p>
-    <ul>
-      <li>Integrated diagnostics, Log Analytics, and CloudWatch monitoring across Terraform modules.</li>
-      <li>Led troubleshooting of networking conflicts, provider version mismatches, SKU failures, and resource drift across Terraform Cloud workspaces.</li>
-    </ul>
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 28px;
+      color: var(--primary);
+    }
+
+    .subtitle {
+      margin: 0 0 10px 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .meta a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .meta a:hover { text-decoration: underline; }
+
+    nav {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--link);
+      text-decoration: none;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--card-bg);
+    }
+
+    nav a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    section {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    p { margin: 0 0 10px 0; }
+
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li { margin: 6px 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      background: var(--card-bg);
+    }
+
+    .card h3 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 8px;
+      background: #f3ede8;
+    }
+
+    .btn-row {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    footer {
+      padding: 18px 0 6px;
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <h1>Mocktar Adjibade Tairou, MBA</h1>
+      <p class="subtitle">
+        DevOps & Cloud Platform Engineer · AWS · Azure · Terraform Cloud · Kubernetes · CI/CD · Security
+      </p>
+
+      <div class="meta">
+        <span>Greensboro, NC</span>
+        <span><a href="mailto:tairou.mocktar@gmail.com">tairou.mocktar@gmail.com</a></span>
+        <span>336-398-0610</span>
+        <span><a href="https://linkedin.com/in/mocktar-tairou" target="_blank">LinkedIn</a></span>
+        <span><a href="https://github.com/YOUR_GITHUB" target="_blank">GitHub</a></span>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="btn-row">
+        <a class="btn" href="Mocktar_Tairou_Resume.pdf" target="_blank">Download Resume</a>
+        <a class="btn secondary" href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        DevOps and Cloud Platform Engineer with 10+ years of experience designing,
+        building, and operating secure, scalable infrastructure across AWS and Azure.
+        Strong focus on Infrastructure as Code, Kubernetes, CI/CD automation,
+        observability, and compliance-driven environments.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Core Skills</h2>
+      <div class="card">
+        <ul>
+          <li>Infrastructure as Code: Terraform, Terraform Cloud, Terragrunt</li>
+          <li>AWS: VPC, EC2, S3, RDS, IAM, CloudWatch</li>
+          <li>Azure: VNET, AKS, Event Hubs, Logic Apps, Container Apps</li>
+          <li>Containers: Docker, Kubernetes, Helm</li>
+          <li>CI/CD: GitHub Actions, Jenkins, ArgoCD</li>
+          <li>Security: Checkov, tfsec, Sentinel, private endpoints</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Enterprise Terraform Cloud Module Platform</h3>
+          <p class="small">Annalect · Omnicom Media Group</p>
+          <ul>
+            <li>Designed and published 15+ reusable Terraform modules for AWS and Azure.</li>
+            <li>Embedded security, diagnostics, and compliance standards by default.</li>
+            <li>Reduced infrastructure provisioning time from days to minutes.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Terraform</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Azure</span>
+            <span class="tag">Security</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Backstage IDP Self-Service Provisioning</h3>
+          <ul>
+            <li>Built no-code provisioning templates with validation and guardrails.</li>
+            <li>Enabled developer self-service while maintaining governance.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Backstage</span>
+            <span class="tag">IDP</span>
+            <span class="tag">DevEx</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>PromptFlow Orchestrator Platform</h3>
+          <p class="small">Omnicom Health · DevOps Engineer</p>
+          <ul>
+            <li>Owned CI/CD pipelines and infrastructure automation.</li>
+            <li>Integrated monitoring, security controls, and diagnostics.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">CI/CD</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Observability</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Chaos Engineering for Resilience</h3>
+          <p class="small">Infostretch</p>
+          <ul>
+            <li>Executed Gremlin experiments on Kubernetes and cloud workloads.</li>
+            <li>Improved recovery procedures and system reliability.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Gremlin</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Reliability</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="card">
+        <h3>Annalect (Omnicom Media Group)</h3>
+        <p class="small">DevOps & Cloud Platform Engineer · Jul 2022 – Present</p>
+        <ul>
+          <li>Built reusable Terraform Cloud modules for AWS and Azure.</li>
+          <li>Developed CI/CD pipelines with security and compliance checks.</li>
+          <li>Improved observability and reduced production incidents.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Infostretch</h3>
+        <p class="small">DevOps Engineer</p>
+        <ul>
+          <li>Ran chaos engineering experiments using Gremlin.</li>
+          <li>Automated infrastructure with Terraform and Ansible.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Cognizant</h3>
+        <p class="small">DevOps Engineer</p>
+        <ul>
+          <li>Automated AWS infrastructure and CI/CD pipelines.</li>
+          <li>Managed Kubernetes workloads and monitoring.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:tairou.mocktar@gmail.com">tairou.mocktar@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/mocktar-tairou" target="_blank">linkedin.com/in/mocktar-tairou</a></p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Mocktar Tairou
+    </footer>
+
   </div>
 
-  <div class="card">
-    <h3>DevOps Engineer</h3>
-    <p class="small">Infostretch · Remote · Mar 2022 – Jul 2022</p>
-    <ul>
-      <li>Executed chaos engineering experiments using Gremlin against Kubernetes clusters, EC2, and VM workloads.</li>
-      <li>Designed secure CI/CD pipelines integrating compliance checks and secrets management.</li>
-      <li>Automated provisioning and configuration workflows using Terraform and Ansible.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>DevOps Engineer</h3>
-    <p class="small">Cognizant · Remote · Jan 2017 – Mar 2022</p>
-    <ul>
-      <li>Automated AWS infrastructure (VPC, EC2, S3, Route53, ELB) using Terraform and scripting.</li>
-      <li>Managed Kubernetes clusters using Docker, ArgoCD, and Ansible workflows.</li>
-      <li>Built enterprise CI/CD pipelines using Jenkins, Maven, and SonarQube.</li>
-      <li>Implemented monitoring solutions with CloudWatch, Grafana, and New Relic.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Linux System Administrator</h3>
-    <p class="small">OCEANIX SARL · Benin · Aug 2013 – Jan 2017</p>
-    <ul>
-      <li>Administered Red Hat and Ubuntu servers running LAMP stacks, HAProxy, and Apache.</li>
-      <li>Automated system administration using Bash and Cron.</li>
-      <li>Ensured system reliability, patching compliance, and access security.</li>
-    </ul>
-  </div>
-</section>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
