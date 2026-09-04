@@ -127,6 +127,11 @@ h1 { margin: 0; font-size: clamp(2.8rem, 7vw, 5.7rem); color: var(--navy); }
 .button.text-button { background: transparent; color: var(--navy); }
 .button.small { min-height: 42px; padding: 0 16px; font-size: 0.9rem; }
 
+.hero-side { display: grid; align-items: start; }
+.profile-photo-card { width: min(320px, 84%); margin: 0 auto -32px; position: relative; z-index: 1; }
+.profile-photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border: 6px solid var(--paper); border-radius: 24px; box-shadow: var(--shadow); }
+.hero-side .hero-panel { padding-top: 66px; }
+
 .hero-panel {
   background: var(--navy);
   color: var(--white);
@@ -177,6 +182,8 @@ h1 { margin: 0; font-size: clamp(2.8rem, 7vw, 5.7rem); color: var(--navy); }
 .page-hero { padding: 78px 0 48px; }
 .page-hero .shell { max-width: 900px; }
 .content { max-width: 900px; }
+.about-photo { width: min(280px, 72vw); margin: 0 auto 40px; }
+.about-photo img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border: 6px solid var(--white); border-radius: 24px; box-shadow: var(--shadow); }
 .timeline { display: grid; gap: 20px; }
 .timeline article { position: relative; padding: 26px 28px 26px 32px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; }
 .timeline article::before { content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 4px; background: var(--blue); border-radius: 4px; }
